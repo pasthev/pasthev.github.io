@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;    /* Modern font family */
-    margin: 20px;               /* Margin around content */
+    margin: 5em 10% 2em;               /* Margin around content */
     line-height: 1.6;           /* Line spacing for better readability */
     color: #333;              /* Dark text color, but not absolute black */
 }
