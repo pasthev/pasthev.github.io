@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;    /* Modern font family */
+    margin: 20px;               /* Margin around content */
+    line-height: 1.6;           /* Line spacing for better readability */
+    color: #333;              /* Dark text color, but not absolute black */
+}
+
+header {
+    display: flex;              /* To align image and title side by side */
+    align-items: center;        /* Vertically center header elements */
+    margin-bottom: 20px;        /* Margin at the bottom of the header */
+}
+
+.profile-image {
+    width: 150px;               /* Width of the profile image */
+    height: 150px;              /* Height of the profile image */
+    border-radius: 10px;        /* Rounded corners for the image */
+    margin-right: 20px;         /* Margin to the right of the image to space it from the title */
+}
+
+h1 {
+    font-size: 2.5em;           /* Main title font size */
+    margin: 0;                  /* Remove default title margins */
+}
+
+h2 {
+    font-size: 2em;                     /* Section title font size */
+    border-bottom: 2px solid #ccc;    /* Separating line under section titles */
+    padding-bottom: 0.5em;              /* Spacing below the separating line */
+    margin-top: 1.5em;                  /* Margin above section titles */
+}
+
+h3 {
+    font-size: 1.5em;                   /* Subtitle font size */
+    margin-top: 1em;                    /* Margin above subtitles */
+}
+
+code {
+    background-color: #f4f4f4;    /* Light gray background for code */
+    padding: 2px 5px;               /* Inner spacing for code */
+    border-radius: 5px;             /* Rounded corners for code */
+    font-family: monospace;         /* Monospace font for code */
+}
+
+a {
+    color: #007BFF;               /* Blue color for links (classic link color) */
+    text-decoration: none;          /* Remove default link underline */
+}
+
+a:hover {
+    text-decoration: underline;     /* Underline links on mouse hover */
+}
+
+#bio ul {
+    list-style: none;               /* Remove default list bullets */
+    padding-left: 0;                /* Remove default list indentation */
+}
+
+#bio li {
+    margin-bottom: 0.5em;           /* Spacing between experience list items */
+}
+
+.project {
+    margin-bottom: 2em;             /* Margin at the bottom of each project block */
+    padding: 1em;                   /* Inner spacing for each project block */
+    border: 1px solid #eee;       /* Light border for each project block */
+    border-radius: 5px;             /* Rounded corners for project blocks */
+    background-color: #f9f9f9;    /* Slightly gray background for project blocks */
+}
+
+footer {
+    text-align: center;             /* Center footer text */
+    margin-top: 3em;                /* Margin above the footer */
+    color: #777;                  /* Lighter text color for the footer */
+    border-top: 1px solid #eee;   /* Separating line above the footer */
+    padding-top: 1em;               /* Spacing above the footer */
+}
