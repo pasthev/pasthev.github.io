@@ -1,176 +1,294 @@
+:root {
+    /* --- Color Variables --- */
+    --color-text-main: #333;                    /* Main text color for the body of the website */
+    --color-link-primary: #6f2309;              /* Primary color for links, a brownish hue */
+    --color-border-light: #eee;                 /* Light gray color for borders to create subtle separations */
+    --color-shadow-light: #888888;              /* Light gray color for general shadows, providing depth */
+    --color-code-background: #f4f4f4;           /* Very light gray background for code snippets, for visual distinction */
+    --color-project-background-light: #f9f9f9;  /* Light gray background for project sections, a slightly lighter shade */
+    --color-project-background-accent: #E6C9A8; /* Light beige/brown accent background for project sections, providing visual interest */
+    --color-footer-text: #777;                  /* Gray color for footer text, for less emphasis than main text */
+
+    /* --- Spacing Variables --- */
+    --spacing-margin-body-horizontal: 10%;        /* Horizontal margins for the main body content, set in percentage for responsiveness */
+    --spacing-margin-header-bottom: 20px;         /* Margin below the header, separating it from the main content */
+    --spacing-margin-section-top: 1.5em;          /* Top margin for main sections (like 'About Me', 'Projects'), using 'em' for font-relative spacing */
+    --spacing-padding-section-bottom: 0.5em;      /* Bottom padding for section titles, creating space between the title and content */
+    --spacing-margin-project-bottom: 2em;         /* Margin below each project block, separating projects vertically */
+    --spacing-padding-project: 1em;               /* Padding inside each project block, creating internal space */
+    --spacing-margin-image-right: 20px;           /* Right margin for images placed to the left of text (like profile image) */
+    --spacing-margin-project-image-left: 15px;    /* Left margin for project images, separating them from project text */
+    --spacing-padding-project-text-right: 20px;   /* Right padding for project text blocks, separating them from project images */
+    --spacing-indentation: 30px;                  /* Indentation used for lists and sections like 'bio' and 'projects', creating visual hierarchy */
+    --spacing-margin-footer-top: 3em;             /* Top margin for the footer, separating it from the main content */
+    --spacing-padding-footer-top: 1em;            /* Top padding for the footer, creating space between the top border and footer content */
+    --spacing-margin-footer-icon: 10px;           /* Margin around footer icons (like GitHub, LinkedIn), for spacing between icons */
+
+    /* --- Border Radius Variable --- */
+    --border-radius-base: 10px;                   /* Base border radius for rounded corners on various elements like images, code blocks, and project sections */
+
+    /* --- Shadow Variables --- */
+    --box-shadow-profile-project: 5px 5px 10px var(--color-shadow-light); /* Shadow for profile image and project blocks, using the light shadow color variable */
+    --box-shadow-contact-icon: 5px 5px 5px rgba(0, 0, 0, 0.7);          /* Specific shadow for the contact icon, slightly different parameters and opacity */
+}
+
 body {
+    /*  Main styles for the body of the webpage */
     font-family: sans-serif;    /* Modern font family */
-    margin: 5em 10% 2em;        /* Margin around content */
+    margin: 5em var(--spacing-margin-body-horizontal) 2em;        /* Margin around content */
     line-height: 1.6;           /* Line spacing for better readability */
-    color: #333;              /* Dark text color, but not absolute black */
+    color: var(--color-text-main);              
 }
 
 header {
+    /*  Styles for the header section, containing profile image, title, and contact icon */
     display: flex;              /* To align image and title side by side */
     align-items: center;        /* Vertically center header elements */
-    margin-bottom: 20px;        /* Margin at the bottom of the header */
+    margin-bottom: var(--spacing-margin-header-bottom);        /* Margin at the bottom of the header */
     position: relative;         /* Always preferable to mention */
 }
 
 .profile-image {
+    /*  Styles for the profile image in the header */
     width: 200px;               /* Width of the profile image */
     height: 200px;              /* Height of the profile image */
-    border-radius: 10px;        /* Rounded corners for the image */
-    margin-right: 20px;         /* Margin to the right of the image to space it from the title */
-    box-shadow: 5px 5px 10px #888888; /* Add a subtle box shadow */
+    border-radius: var(--border-radius-base); 
+    margin-right: var(--spacing-margin-image-right);
+    box-shadow: var(--box-shadow-profile-project); 
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions for scaling and filter */
     filter: sepia(00%);         /* Initially in regular color */
 }
 
 .profile-image:hover {
+    /*  Mouse-over effect styles for the profile image */
     transform: scale(1.05);     /* Slightly scale up on hover */
     filter: sepia(40%);         /* Sepia on hover */
 }
 
 h1 {
+    /*  Styles for the main title (<h1>) of the page */
     font-size: 2.5em;           /* Main title font size */
     margin: 0;                  /* Remove default title margins */
 }
 
 h2 {
+    /*  Styles for section titles (<h2>) */
     font-size: 2em;                     /* Section title font size */
     border-bottom: 2px solid #ccc;    /* Separating line under section titles */
-    padding-bottom: 0.5em;              /* Spacing below the separating line */
-    margin-top: 1.5em;                  /* Margin above section titles */
+    padding-bottom: var(--spacing-padding-section-bottom);
+    margin-top: var(--spacing-margin-section-top);
 }
 
 h3 {
+    /*  Styles for subtitles (<h3>) within sections */
     font-size: 1.3em;                   /* Subtitle font size */
     margin-top: 1em;                    /* Margin above subtitles */
 }
 
 code {
-    background-color: #f4f4f4;    /* Light gray background for code */
+    /*  Styles for inline code snippets */
+    background-color: var(--color-code-background);    /* Light gray background for code */
     padding: 2px 5px;               /* Inner spacing for code */
-    border-radius: 5px;             /* Rounded corners for code */
+    border-radius: var(--border-radius-base);             /* Rounded corners for code */
     font-family: monospace;         /* Monospace font for code */
 }
 
 a {
-    color: #6f2309;               /* Brown color for links (classic link color) */
+    /*  Default styles for links (<a>) */
+    color: var(--color-link-primary);               /* Brown color for links (classic link color) */
     text-decoration: none;          /* Remove default link underline */
 }
 
 a:hover {
+    /*  Mouse-over effect for links */
     text-decoration: underline;     /* Underline links on mouse hover */
 }
 
 #bio {
-    padding-left: 30px;             /* Indentation */
+    /*  Styles for the 'About Me' section */
+    padding-left: var(--spacing-indentation);             /* Indentation */
 }
 
 #bio ul {
+    /*  Styles for unordered lists within the 'bio' section */
     list-style: none;               /* Remove default list bullets */
-    padding-left: 30px;             /* Remove default list indentation */
+    padding-left: var(--spacing-indentation);             /* Remove default list indentation */
 }
 
 #bio li {
+    /*  Styles for list items within the 'bio' section's lists */
     margin-bottom: 0.5em;           /* Spacing between experience list items */
 }
 
 #projects {
-    padding-left: 30px;             /* Indentation */
+    /*  Styles for the 'My Projects' section */
+    padding-left: var(--spacing-indentation);             /* Indentation */
 }
 
 .project {
-    margin-bottom: 2em;
-    padding: 1em;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    background-color: #E6C9A8;
-    box-shadow: 5px 5px 10px #888888; /* Add a subtle box shadow */
+    /*  Styles for individual project blocks */
+    margin-bottom: var(--spacing-margin-project-bottom);
+    padding: var(--spacing-padding-project);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-base);
+    background-color: var(--color-project-background-accent);
+    box-shadow: var(--box-shadow-profile-project);
     display: flex;                      /* Flexbox for .project */
     justify-content: space-between;     /* Space between content (text) and picture */
     align-items: flex-end;              /* Align  elements down (so that text & pics align downward) */
 }
 
 .project-image {
+    /*  Styles for images within project blocks */
     width: 320px;                   /* Fixed pic width */
     height: 240px;                  /* and heigth */
-    border-radius: 10px;            /* Rounded corners */
+    border-radius: var(--border-radius-base);            /* Rounded corners */
     border-style: groove;
-    margin-left: 15px;              /* Left margin to separate pic from text */
+    margin-left: var(--spacing-margin-project-image-left);              /* Left margin to separate pic from text */
     align-self: flex-end;           /* Align pic to the right of .project bloc */
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions for scaling and filter */
     filter: sepia(00%);             /* Initially in normal colors */
 }
 
 .project-image:hover {
+    /*  Mouse-over effect for project images */
     transform: scale(1.05);         /* Slightly scale up on hover */
     filter: sepia(80%);             /* Sepia on hover */
 }
 
 .project-text {
-    padding-right: 20px;            /* Added right margin to separate from pic */
+    /*  Styles for the text content within project blocks */
+    padding-right: var(--spacing-padding-project-text-right);            /* Added right margin to separate from pic */
     max-width: 70%;                 /* Limit for text bloc */
 }
 
+.contact-icon {
+    /*  Styles for the contact icon image */
+    width: 120px;                                           /* Width of the icon (was: 150) */
+    height: 98px;                                           /* Height of the icon (was:123) */
+    transition: transform 0.2s ease-in-out;                 /* Smooth transition for hover effect */
+    filter: sepia(60%) drop-shadow(var(--box-shadow-contact-icon));  /* Light shadow, optional - for a visual effect */
+}
+
 .contact-icon-link {
+    /*  Positioning styles for the contact icon link */
     position: absolute;             /* Absolute positioning relative to the nearest positioned ancestor (here, <header>) */
     top: 0px;                       /* Positioned 0 pixels from the top of the header */
     right: 0px;                     /* Positioned 0 pixels from the right of the header */
 }
 
-.contact-icon {
-    width: 120px;                                           /* Width of the icon (was: 150) */
-    height: 98px;                                           /* Height of the icon (was:123) */
-    transition: transform 0.2s ease-in-out;                 /* Smooth transition for hover effect */
-    filter: sepia(60%) drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));  /* Light shadow, optional - for a visual effect */
-}
-
 .contact-icon:hover {
+    /*  Mouse-over effect for the contact icon */
     transform: scale(1.05);                                 /* Slightly enlarge the icon on hover */
-    filter: sepia(0%) drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.7));  /* Light shadow, optional - for a visual effect */
+    filter: sepia(0%) drop-shadow(var(--box-shadow-contact-icon));  /* Light shadow, optional - for a visual effect */
 }
 
 footer {
+    /*  Styles for the footer (bottom) section */
     text-align: center;             /* Center footer text */
-    margin-top: 3em;                /* Margin above the footer */
-    color: #777;                  /* Lighter text color for the footer */
-    border-top: 1px solid #eee;   /* Separating line above the footer */
-    padding-top: 1em;               /* Spacing above the footer */
-    position: relative;             /* For absolute positioning*/
+    margin-top: var(--spacing-margin-footer-top);
+    color: var(--color-footer-text);
+    border-top: 1px solid var(--color-border-light);
+    padding-top: var(--spacing-padding-footer-top);
+    position: relative;
 }
 
-.github-icon-link {
+.github-icon-link, .linkedin-icon-link {
+    /*  General styles for GitHub and LinkedIn icon links in the footer */
     position: absolute;                     /* Absolute positioning relative to the footer */
-    left: 20px;                             /* Positioned 20px from the left edge of the footer */
     bottom: 10px;                           /* Positioned 10px from the bottom edge of the footer */
     opacity: 0.7;                           /* Slightly transparent logo by default */
     transition: opacity 0.2s ease-in-out;   /* Smooth transition for opacity on hover */
     display: block;                         /* To ensure the link area covers the whole image */
 }
 
-.github-icon-link:hover {
+.github-icon-link:hover, .linkedin-icon-link:hover {
+    /*  Hover effect for GitHub and LinkedIn icon links */
     opacity: 1;                     /* Make logo fully opaque on hover */
 }
 
-.github-icon {
-    width: 137px;                   /* Width of the logo */
-    height: 30px;                   /* Height of the logo */
-                                    /* No border or shadow here, as it's a transparent logo */
+.github-icon-link {
+    /*  Specific positioning styles for the GitHub icon link in the footer */
+    left: var(--spacing-margin-image-right); /* Left positioning */
 }
 
 .linkedin-icon-link {
-    position: absolute;                     /* Absolute positioning relative to the footer */
-    right: 20px;                            /* Positioned 20px from the left edge of the footer */
-    bottom: 10px;                           /* Positioned 10px from the bottom edge of the footer */
-    opacity: 0.7;                           /* Slightly transparent logo by default */
-    transition: opacity 0.2s ease-in-out;   /*  Smooth transition for opacity on hover */
-    display: block;                         /* To ensure the link area covers the whole image */
+    /*  Specific positioning styles for the LinkedIn icon link in the footer */
+    right: var(--spacing-margin-image-right); /* Right positioning */
 }
 
-.linkedin-icon-link:hover {
-    opacity: 1;                     /* Logo in full opacity on hover */
+.github-icon, .linkedin-icon {
+/* --- Common styles for footer logo images (GitHub & LinkedIn) --- */
+    width: auto;      /* Width adjusts automatically to maintain aspect ratio */
+    height: 30px;     /* Fixed height for the logos */
 }
 
-.linkedin-icon {
-    width: 120px;                   /* Width of the logo */
-    height: 30px;                   /* Height of the logo */
-                                    /* No border or shadow here, as it's a transparent logo */
+/* --- Media Query for smaller screens (e.g., phones - below 768px width) --- */
+
+@media (max-width: 768px) { /* Apply styles only when screen width is 768px or less */
+    body {
+        margin: 2em 5% 2em; /* Reduce body margin on smaller screens for better space utilization */
+    }
+
+    header {
+        flex-direction: column; /* Stack header elements (profile image, title, contact icon) vertically instead of side-by-side */
+        text-align: center;     /* Center align text within the header when stacked */
+    }
+
+    .profile-image {
+        margin-right: 0;      /* Remove right margin from profile image as it's now above the title, not beside it */
+        margin-bottom: 10px;  /* Add bottom margin to the profile image to separate it from the title below */
+        width: 150px;         /* Slightly reduce the width of the profile image for smaller screens */
+        height: 150px;        /* Slightly reduce the height of the profile image for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8em;      /* Reduce the font size of the main title for smaller screens */
+    }
+
+    .contact-icon {
+        width: 60px;   /* Nouvelle largeur pour petit écran */
+        height: 49px;  /* Nouvelle hauteur pour petit écran */
+        /* ... les autres styles .contact-icon dans le media query ... */
+    }
+
+    .contact-icon-link {
+        position: static;    /* Change positioning from absolute to static. This makes the contact icon flow in the document order, below the header content */
+        margin-top: 15px;    /* Add top margin to the contact icon to create space between it and the header text */
+        text-align: center;   /* Center align the contact icon link */
+    }
+
+    .project {
+        flex-direction: column; /* Change flex direction to column, stacking project text and image vertically */
+        align-items: stretch;   /* Make project items (text and image) stretch to the full width of the container */
+    }
+
+    .project-image {
+        margin-left: 0;      /* Remove the left margin from project images as they are now stacked below the text, not beside it */
+        margin-top: 15px;     /* Add top margin to the project image to separate it from the text above */
+        width: 100%;         /* Make project images take up 100% of the width of their container */
+        max-width: 400px;    /* Optionally set a maximum width for project images to prevent them from becoming too large on very wide phone screens */
+        height: auto;        /* Set height to auto so the image scales proportionally to the width, maintaining aspect ratio */
+    }
+
+    .project-text {
+        max-width: 100%;     /* Allow project text to take up 100% width on smaller screens */
+        padding-right: 0;    /* Remove right padding from project text as the image is no longer to its right */
+    }
+
+    footer {
+        text-align: center;   /* Center align the text in the footer on smaller screens */
+    }
+
+    .github-icon-link, .linkedin-icon-link {
+        position: static;    /* Change positioning of footer icons from absolute to static, allowing them to flow */
+        display: inline-block; /* Display footer icons as inline-block elements so they can be side-by-side but still have margin */
+        margin: 10px;        /* Add margin around the footer icons for spacing */
+        text-align: center;   /* Center align the footer icon links */
+    }
+
+    .github-icon, .linkedin-icon {
+        width: auto;         /* Reduce the width of the footer icons for smaller screens */
+        height: 20px;        /* Set height to auto to scale proportionally with the reduced width */
+    }
 }
