@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;    /* Modern font family */
-    margin: 5em 10% 2em;               /* Margin around content */
+    margin: 5em 10% 2em;        /* Margin around content */
     line-height: 1.6;           /* Line spacing for better readability */
     color: #333;              /* Dark text color, but not absolute black */
 }
@@ -9,13 +9,22 @@ header {
     display: flex;              /* To align image and title side by side */
     align-items: center;        /* Vertically center header elements */
     margin-bottom: 20px;        /* Margin at the bottom of the header */
+    position: relative;         /* Always preferable to mention */
 }
 
 .profile-image {
-    width: 150px;               /* Width of the profile image */
-    height: 150px;              /* Height of the profile image */
+    width: 200px;               /* Width of the profile image */
+    height: 200px;              /* Height of the profile image */
     border-radius: 10px;        /* Rounded corners for the image */
     margin-right: 20px;         /* Margin to the right of the image to space it from the title */
+    box-shadow: 5px 5px 10px #888888; /* Add a subtle box shadow */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions for scaling and filter */
+    filter: sepia(00%);         /* Initially in regular color */
+}
+
+.profile-image:hover {
+    transform: scale(1.05);     /* Slightly scale up on hover */
+    filter: sepia(40%);         /* Sepia on hover */
 }
 
 h1 {
@@ -31,7 +40,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5em;                   /* Subtitle font size */
+    font-size: 1.3em;                   /* Subtitle font size */
     margin-top: 1em;                    /* Margin above subtitles */
 }
 
@@ -43,7 +52,7 @@ code {
 }
 
 a {
-    color: #007BFF;               /* Blue color for links (classic link color) */
+    color: #6f2309;               /* Brown color for links (classic link color) */
     text-decoration: none;          /* Remove default link underline */
 }
 
@@ -51,21 +60,72 @@ a:hover {
     text-decoration: underline;     /* Underline links on mouse hover */
 }
 
+#bio {
+    padding-left: 30px;             /* Indentation */
+}
+
 #bio ul {
     list-style: none;               /* Remove default list bullets */
-    padding-left: 0;                /* Remove default list indentation */
+    padding-left: 30px;             /* Remove default list indentation */
 }
 
 #bio li {
     margin-bottom: 0.5em;           /* Spacing between experience list items */
 }
 
+#projects {
+    padding-left: 30px;             /* Indentation */
+}
+
 .project {
-    margin-bottom: 2em;             /* Margin at the bottom of each project block */
-    padding: 1em;                   /* Inner spacing for each project block */
-    border: 1px solid #eee;       /* Light border for each project block */
-    border-radius: 5px;             /* Rounded corners for project blocks */
-    background-color: #f9f9f9;    /* Slightly gray background for project blocks */
+    margin-bottom: 2em;
+    padding: 1em;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #E6C9A8;
+    box-shadow: 5px 5px 10px #888888; /* Add a subtle box shadow */
+    display: flex;                      /* Flexbox for .project */
+    justify-content: space-between;     /* Space between content (text) and picture */
+    align-items: flex-end;              /* Align  elements down (so that text & pics align downward) */
+}
+
+.project-image {
+    width: 320px;                   /* Fixed pic width */
+    height: 240px;                  /* and heigth */
+    border-radius: 10px;            /* Rounded corners */
+    border-style: groove;
+    margin-left: 15px;              /* Left margin to separate pic from text */
+    align-self: flex-end;           /* Align pic to the right of .project bloc */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions for scaling and filter */
+    filter: sepia(00%);             /* Initially in normal colors */
+}
+
+.project-image:hover {
+    transform: scale(1.05);         /* Slightly scale up on hover */
+    filter: sepia(80%);             /* Sepia on hover */
+}
+
+.project-text {
+    padding-right: 20px;            /* Added right margin to separate from pic */
+    max-width: 70%;                 /* Limit for text bloc */
+}
+
+.contact-icon-link {
+    position: absolute;             /* Absolute positioning relative to the nearest positioned ancestor (here, <header>) */
+    top: 0px;                       /* Positioned 0 pixels from the top of the header */
+    right: 0px;                     /* Positioned 0 pixels from the right of the header */
+}
+
+.contact-icon {
+    width: 120px;                                           /* Width of the icon (was: 150) */
+    height: 98px;                                           /* Height of the icon (was:123) */
+    transition: transform 0.2s ease-in-out;                 /* Smooth transition for hover effect */
+    filter: sepia(60%) drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));  /* Light shadow, optional - for a visual effect */
+}
+
+.contact-icon:hover {
+    transform: scale(1.05);                                 /* Slightly enlarge the icon on hover */
+    filter: sepia(0%) drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.7));  /* Light shadow, optional - for a visual effect */
 }
 
 footer {
@@ -74,4 +134,43 @@ footer {
     color: #777;                  /* Lighter text color for the footer */
     border-top: 1px solid #eee;   /* Separating line above the footer */
     padding-top: 1em;               /* Spacing above the footer */
+    position: relative;             /* For absolute positioning*/
+}
+
+.github-icon-link {
+    position: absolute;                     /* Absolute positioning relative to the footer */
+    left: 20px;                             /* Positioned 20px from the left edge of the footer */
+    bottom: 10px;                           /* Positioned 10px from the bottom edge of the footer */
+    opacity: 0.7;                           /* Slightly transparent logo by default */
+    transition: opacity 0.2s ease-in-out;   /* Smooth transition for opacity on hover */
+    display: block;                         /* To ensure the link area covers the whole image */
+}
+
+.github-icon-link:hover {
+    opacity: 1;                     /* Make logo fully opaque on hover */
+}
+
+.github-icon {
+    width: 137px;                   /* Width of the logo */
+    height: 30px;                   /* Height of the logo */
+                                    /* No border or shadow here, as it's a transparent logo */
+}
+
+.linkedin-icon-link {
+    position: absolute;                     /* Absolute positioning relative to the footer */
+    right: 20px;                            /* Positioned 20px from the left edge of the footer */
+    bottom: 10px;                           /* Positioned 10px from the bottom edge of the footer */
+    opacity: 0.7;                           /* Slightly transparent logo by default */
+    transition: opacity 0.2s ease-in-out;   /*  Smooth transition for opacity on hover */
+    display: block;                         /* To ensure the link area covers the whole image */
+}
+
+.linkedin-icon-link:hover {
+    opacity: 1;                     /* Logo in full opacity on hover */
+}
+
+.linkedin-icon {
+    width: 120px;                   /* Width of the logo */
+    height: 30px;                   /* Height of the logo */
+                                    /* No border or shadow here, as it's a transparent logo */
 }
