@@ -126,4 +126,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return text; // Return the processed text with HTML tags
     }
 
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    const currentTheme = localStorage.getItem('theme') || 'light'; // 'light' by default
+
+    // Dark theme activation
+    function enableDarkMode() {
+        body.classList.add('dark-theme');
+        themeIcon.src = 'sun.png'; 
+        themeIcon.alt = 'Thème sombre';
+        localStorage.setItem('theme', 'dark');
+    }
+
+    // Light theme activation
+    function enableLightMode() {
+        body.classList.remove('dark-theme');
+        themeIcon.src = 'moon.png'; 
+        themeIcon.alt = 'Thème clair';
+        localStorage.setItem('theme', 'light');
+    }
+
+    // Applies initial theme initial upon page loading
+    if (currentTheme === 'dark') {
+        enableDarkMode();
+    } else {
+        enableLightMode();
+    }
+
+    // Adds an event listener for theme icon
+    themeToggle.addEventListener('click', function (e) {
+        e.preventDefault();             // Prevents default for link "#"
+        if (body.classList.contains('dark-theme')) {
+            enableLightMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+
 });

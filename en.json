@@ -4,7 +4,7 @@
     "contactMeTitle": "Anonymous form to contact me",
     "contactMeAlt": "Contact Me",
     "aboutMeSectionTitle": "About Me",
-    "bioParagraph1": "I'm French, living near Paris. I used to be a machine code dev, back in the days - learned everything with a Zilog Z80A, later coded a lot in Motorola 68000 assembly...",
+    "bioParagraph1": "I'm French, living in the Paris area. I used to be a machine code dev, back in the days - learned everything with a Zilog Z80A, later coded a lot in Motorola 68000 assembly...",
     "bioParagraph2": "I was used to moving bytes for doing things, which explains the hard time I'm sometimes having with high level languages, but at least, in `myVar.push(data[i].colours)`, I can understand `push`, and I'll like it for as long as I can still `pop`.",
     "workExperienceTitle": "Work Experience",
     "workExperienceGoogle": "**Google:** 17 years as Systems Engineer",

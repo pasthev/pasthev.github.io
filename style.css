@@ -1,15 +1,30 @@
 :root {
-    /* --- Color Variables --- */
-    --color-text-main: #333;                    /* Main text color for the body of the website */
-    --color-titles: #5a2000;                    /* Main text color for the titles of the website */
-    --color-link-primary: #6f2309;              /* Primary color for links, a brownish hue */
-    --color-border-light: #eee;                 /* Light gray color for borders to create subtle separations */
-    --color-shadow-light: #888888;              /* Light gray color for general shadows, providing depth */
-    --color-code-background: #f4f4f4;           /* Very light gray background for code snippets, for visual distinction */
-    --color-project-background-light: #f9f9f9;  /* Light gray background for project sections, a slightly lighter shade */
-    --color-project-background-accent: #E6C9A8; /* Light beige/brown accent background for project sections, providing visual interest */
-    --color-footer-text: #777;                  /* Gray color for footer text, for less emphasis than main text */
+    /* --- Color Variables - Light Theme --- */
+    --color-text-main-light: #333;                    /* Main text color for the body of the website */
+    --color-titles-light: #5a2000;                    /* Main text color for the titles of the website */
+    --color-link-primary-light: #6f2309;              /* Primary color for links, a brownish hue */
+    --color-border-light-light: #eee;                 /* Light gray color for borders to create subtle separations */
+    --color-shadow-light-light: #888888;              /* Light gray color for general shadows, providing depth */
+    --color-shadow-dark-light: #444;                  /* Light gray color for general shadows, providing depth */
+    --color-code-background-light: #f4f4f4;           /* Very light gray background for code snippets, for visual distinction */
+    --color-project-background-light-light: #f9f9f9;  /* Light gray background for project sections, a slightly lighter shade */
+    --color-project-background-accent-light: #E6C9A8; /* Light beige/brown accent background for project sections, providing visual interest */
+    --color-footer-text-light: #777;                  /* Gray color for footer text, for less emphasis than main text */
+    --body-background-color-light: #fff;              /* Background color for body in light theme */
 
+    /* --- Color Variables - Dark Theme --- */
+    --color-text-main-dark: #ddd;                     /* Main text color for dark theme */
+    --color-titles-dark: #f0f0f0;                     /* Main title color for dark theme */
+    --color-link-primary-dark: #d9a68c;               /* Primary link color for dark theme */
+    --color-border-light-dark: #555;                  /* Light border color for dark theme */
+    --color-shadow-light-dark: #400;                  /* Dark shadow color for dark theme */
+    --color-shadow-dark-dark: #900;                   /* Light gray color for general shadows, providing depth */
+    --color-code-background-dark: #222;               /* Code background color for dark theme */
+    --color-project-background-light-dark: #333;      /* Project section background light for dark theme */
+    --color-project-background-accent-dark: #33261e;  /* Project section accent background for dark theme */
+    --color-footer-text-dark: #bbb;                   /* Footer text color for dark theme */
+    --body-background-color-dark: #121212;            /* Background color for body in dark theme */ 
+    
     /* --- Spacing Variables --- */
     --spacing-margin-body-horizontal: 10%;        /* Horizontal margins for the main body content, set in percentage for responsiveness */
     --spacing-margin-header-bottom: 20px;         /* Margin below the header, separating it from the main content */
@@ -29,35 +44,38 @@
     --border-radius-base: 10px;                   /* Base border radius for rounded corners on various elements like images, code blocks, and project sections */
 
     /* --- Shadow Variables --- */
-    --box-shadow-profile-project: 5px 5px 10px var(--color-shadow-light); /* Shadow for profile image and project blocks, using the light shadow color variable */
-    --box-shadow-contact-icon: 5px 5px 5px rgba(0, 0, 0, 0.7);          /* Specific shadow for the contact icon, slightly different parameters and opacity */
+    --box-shadow-profile-project-light: 5px 5px 10px var(--color-shadow-light-light);   /* Shadow for profile image and project blocks, using the light shadow color variable */
+    --box-shadow-contact-icon-light: 5px 5px 5px var(--color-shadow-dark-light);        /* Specific shadow for the contact icon, slightly different parameters and opacity */
+    --box-shadow-profile-project-dark: 5px 5px 10px var(--color-shadow-light-dark);     /* Shadow for profile image and project blocks, using the light shadow color variable */
+    --box-shadow-contact-icon-dark: 5px 5px 5px var(--color-shadow-dark-dark);          /* Specific shadow for the contact icon, slightly different parameters and opacity */
 }
 
 body {
     /*  Main styles for the body of the webpage */
-    font-family: sans-serif;    /* Modern font family */
+    font-family: sans-serif;                                /* Modern font family */
     margin: 5em var(--spacing-margin-body-horizontal) 2em;  /* Margin around content */
     line-height: 1.6;                                       /* Line spacing for better readability */
-    color: var(--color-text-main);              
+    color: var(--color-text-main-light);              
+    background-color: var(--body-background-color-light); 
 }
 
 header {
     /*  Styles for the header section, containing profile image, title, and contact icon */
-    display: flex;              /* To align image and title side by side */
-    align-items: center;        /* Vertically center header elements */
-    margin-bottom: var(--spacing-margin-header-bottom);        /* Margin at the bottom of the header */
-    position: relative;         /* Always preferable to mention */
+    display: flex;                                              /* To align image and title side by side */
+    align-items: center;                                        /* Vertically center header elements */
+    margin-bottom: var(--spacing-margin-header-bottom);         /* Margin at the bottom of the header */
+    position: relative;                                         /* Always preferable to mention */
 }
 
 .profile-image {
     /*  Styles for the profile image in the header */
-    width: 200px;               /* Width of the profile image */
+    width: 200px;                                                       /* Width of the profile image */
     height: auto;
     border-radius: var(--border-radius-base); 
     margin-right: var(--spacing-margin-image-right);
-    box-shadow: var(--box-shadow-profile-project); 
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions for scaling and filter */
-    filter: sepia(00%);         /* Initially in regular color */
+    box-shadow: var(--box-shadow-profile-project-light); 
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;    /* Smooth transitions for scaling and filter */
+    filter: sepia(00%);                                                 /* Initially in regular color */
 }
 
 .profile-image:hover {
@@ -68,7 +86,7 @@ header {
 
 h1 {
     /*  Styles for the main title (<h1>) of the page */
-    color: var(--color-titles);              
+    color: var(--color-titles-light);              
     font-size: 2.5em;           /* Main title font size */
     margin: 0;                  /* Remove default title margins */
     align-self: flex-end;
@@ -76,31 +94,32 @@ h1 {
 
 h2 {
     /*  Styles for section titles (<h2>) */
-    color: var(--color-titles);              
-    font-size: 2em;                     /* Section title font size */
-    border-bottom: 2px solid #ccc;    /* Separating line under section titles */
+    color: var(--color-titles-light);              
+    font-size: 2em;                                         /* Section title font size */
+    border-bottom: 2px solid #ccc;                        /* Separating line under section titles */
     padding-bottom: var(--spacing-padding-section-bottom);
     margin-top: var(--spacing-margin-section-top);
 }
 
 h3 {
     /*  Styles for subtitles (<h3>) within sections */
+    color: var(--color-titles-light);              
     font-size: 1.3em;                   /* Subtitle font size */
     margin-top: 1em;                    /* Margin above subtitles */
 }
 
 code {
     /*  Styles for inline code snippets */
-    background-color: var(--color-code-background);     /* Light gray background for code */
-    padding: 2px 5px;                                   /* Inner spacing for code */
-    border-radius: var(--border-radius-base);           /* Rounded corners for code */
-    font-family: monospace;                             /* Monospace font for code */
+    background-color: var(--color-code-background-light);   /* Light gray background for code */
+    padding: 2px 5px;                                       /* Inner spacing for code */
+    border-radius: var(--border-radius-base);               /* Rounded corners for code */
+    font-family: monospace;                                 /* Monospace font for code */
 }
 
 a {
     /*  Default styles for links (<a>) */
-    color: var(--color-link-primary);   /* Brown color for links (classic link color) */
-    text-decoration: none;              /* Remove default link underline */
+    color: var(--color-link-primary-light);     /* Brown color for links (classic link color) */
+    text-decoration: none;                      /* Remove default link underline */
 }
 
 a:hover {
@@ -110,21 +129,68 @@ a:hover {
 
 /* Styles for language selector */
 #language-selector {
-    position: absolute; /* Flags at the absolute top right of the screen */
+    position: absolute;     /* Flags at the absolute top right of the screen */
     top: 0px;
     right: 0px;
 }
+
+.contact-icon {
+    /*  Styles for the contact icon image */
+    width: 120px;                                                           /* Width of the icon (was: 150) */
+    height: auto;
+    transition: transform 0.2s ease-in-out;                                 /* Smooth transition for hover effect */
+    filter: sepia(60%) drop-shadow(var(--box-shadow-contact-icon-light));   /* Light shadow, optional - for a visual effect */
+}
+
+.contact-icon-link {
+    /*  Positioning styles for the contact icon link */
+    position: absolute;             /* Absolute positioning relative to the nearest positioned ancestor (here, <header>) */
+    top: 100px;                     /* To leave room for the flags */
+    right: 0px;                     /* Positioned 0 pixels from the right of the header */
+}
+
+.contact-icon:hover {
+    /*  Mouse-over effect for the contact icon */
+    transform: scale(1.05);                                                 /* Slightly enlarge the icon on hover */
+    filter: sepia(0%) drop-shadow(var(--box-shadow-contact-icon-light));    /* Light shadow, optional - for a visual effect */
+}
+
 
 .lang-flag {
     width: 48px;
     height: auto;
     cursor: pointer; /* "Hand" cursor */
-    opacity: 0.6; /* Slightly transparent */
-    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition for mouse-over */
+    transition: transform 0.3s ease-in-out;                 /* Smooth transition for hover effect */
+    opacity: 0.6;                                           /* Slightly transparent */
+    filter: sepia(60%) drop-shadow(var(--box-shadow-contact-icon-light));  /* Light shadow, optional - for a visual effect */
+    transition: opacity 0.3s ease-in-out;                   /* Smooth opacity transition for mouse-over */
 }
 
 .lang-flag:hover, .lang-flag.active {
-    opacity: 1.0;       /* Full opacity on mouse-over */
+    transform: scale(1.15);     /* Slightly scale up on hover */
+    opacity: 1.0;               /* Full opacity on mouse-over */
+}
+
+.lang-option:hover {
+    /* Specific style for flags mouse-over */
+    text-decoration: none;                                                  /* Disables default underline for links fly over */
+    filter: sepia(0%) drop-shadow(var(--box-shadow-contact-icon-light));    /* Light shadow, optional - for a visual effect */
+}
+
+.theme-icon {
+    /* Styles pour l'icône du thème (soleil/lune) */
+    width: 48px;                                                            /* Same widthe as flags */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;                                 /* Smooth transition for hover effect */
+    opacity: 0.6;                                                           /* Slightly transparent */
+    filter: sepia(60%) drop-shadow(var(--box-shadow-contact-icon-light));   /* Light shadow, optional - for a visual effect */
+    margin-left: 10px; 
+}
+
+.theme-icon:hover, .theme-icon.active {
+    opacity: 1.0;     /* Opacité pleine au survol */
+    filter: sepia(0%) drop-shadow(var(--box-shadow-contact-icon-light));    /* Light shadow, optional - for a visual effect */
 }
 
 #bio {
@@ -152,10 +218,10 @@ a:hover {
     /*  Styles for individual project blocks */
     margin-bottom: var(--spacing-margin-project-bottom);
     padding: var(--spacing-padding-project);
-    border: 1px solid var(--color-border-light);
+    border: 1px solid var(--color-border-light-light);
     border-radius: var(--border-radius-base);
-    background-color: var(--color-project-background-accent);
-    box-shadow: var(--box-shadow-profile-project);
+    background-color: var(--color-project-background-accent-light);
+    box-shadow: var(--box-shadow-profile-project-light);
     display: flex;                      /* Flexbox for .project */
     justify-content: space-between;     /* Space between content (text) and picture */
     align-items: flex-end;              /* Align  elements down (so that text & pics align downward) */
@@ -163,14 +229,14 @@ a:hover {
 
 .project-image {
     /*  Styles for images within project blocks */
-    width: 320px;                   /* Fixed pic width */
+    width: 320px;                                                       /* Fixed pic width */
     height: auto;
-    border-radius: var(--border-radius-base);            /* Rounded corners */
+    border-radius: var(--border-radius-base);                           /* Rounded corners */
     border-style: groove;
     margin-left: var(--spacing-margin-project-image-left);              /* Left margin to separate pic from text */
-    align-self: flex-end;           /* Align pic to the right of .project bloc */
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transitions for scaling and filter */
-    filter: sepia(00%);             /* Initially in normal colors */
+    align-self: flex-end;                                               /* Align pic to the right of .project bloc */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;    /* Smooth transitions for scaling and filter */
+    filter: sepia(00%);                                                 /* Initially in normal colors */
 }
 
 .project-image:hover {
@@ -185,36 +251,22 @@ a:hover {
     max-width: 70%;                                             /* Limit for text bloc */
 }
 
-.contact-icon {
-    /*  Styles for the contact icon image */
-    width: 120px;                                           /* Width of the icon (was: 150) */
-    height: auto;
-    transition: transform 0.2s ease-in-out;                 /* Smooth transition for hover effect */
-    filter: sepia(60%) drop-shadow(var(--box-shadow-contact-icon));  /* Light shadow, optional - for a visual effect */
-}
-
-.contact-icon-link {
-    /*  Positioning styles for the contact icon link */
-    position: absolute;             /* Absolute positioning relative to the nearest positioned ancestor (here, <header>) */
-    top: 100px;                     /* To leave room for the flags */
-    right: 0px;                     /* Positioned 0 pixels from the right of the header */
-}
-
-.contact-icon:hover {
-    /*  Mouse-over effect for the contact icon */
-    transform: scale(1.05);                                 /* Slightly enlarge the icon on hover */
-    filter: sepia(0%) drop-shadow(var(--box-shadow-contact-icon));  /* Light shadow, optional - for a visual effect */
-}
-
 footer {
     /*  Styles for the footer (bottom) section */
-    text-align: center;             /* Center footer text */
+    text-align: center;                                 /* Center footer text */
     margin-top: var(--spacing-margin-footer-top);
-    color: var(--color-footer-text);
-    border-top: 1px solid var(--color-border-light);
+    color: var(--color-footer-text-light);
+    border-top: 1px solid var(--color-border-light-light);
     padding-top: var(--spacing-padding-footer-top);
     position: relative;
 }
+
+.github-icon, .linkedin-icon {
+    /* --- Common styles for footer logo images (GitHub & LinkedIn) --- */
+    width: auto;      /* Width adjusts automatically to maintain aspect ratio */
+    height: 30px;     /* Fixed height for the logos */
+    filter: drop-shadow(var(--box-shadow-contact-icon-light));
+    }
 
 .github-icon-link, .linkedin-icon-link {
     /*  General styles for GitHub and LinkedIn icon links in the footer */
@@ -240,13 +292,70 @@ footer {
     right: var(--spacing-margin-image-right); /* Right positioning */
 }
 
-.github-icon, .linkedin-icon {
-/* --- Common styles for footer logo images (GitHub & LinkedIn) --- */
-    width: auto;      /* Width adjusts automatically to maintain aspect ratio */
-    height: 30px;     /* Fixed height for the logos */
+
+
+/* ---------------------------------------------------------------------------*/
+/* ---                   Styles for Dark Theme                            --- */
+/* ---------------------------------------------------------------------------*/
+.dark-theme {
+    background-color: var(--body-background-color-dark);
+}
+.dark-theme body {
+    color: var(--color-text-main-dark);
+    background-color: var(--body-background-color-dark);
+}
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+    color: var(--color-titles-dark);
 }
 
+.dark-theme a {
+    color: var(--color-link-primary-dark);
+}
+.dark-theme p {
+    color: var(--color-text-main-dark);         /* Couleur du texte <p> en thème sombre */
+}
+.dark-theme ul {
+    color: var(--color-text-main-dark);         /* Ensure bio list text is light in dark theme */
+}.dark-theme code {
+    background-color: var(--color-code-background-dark);
+}
+.dark-theme .profile-image {
+    box-shadow: var(--box-shadow-profile-project-dark); 
+}
+.dark-theme .contact-icon {
+    filter: sepia(60%) drop-shadow(var(--box-shadow-contact-icon-dark));    /* Light shadow, optional - for a visual effect */
+}
+.dark-theme .lang-flag {
+    filter: sepia(60%) drop-shadow(var(--box-shadow-contact-icon-dark));    /* Light shadow, optional - for a visual effect */
+}
+.dark-theme .github-icon, .dark-theme .linkedin-icon {
+    filter: drop-shadow(var(--box-shadow-contact-icon-dark));               /* Light shadow, optional - for a visual effect */
+}
+.dark-theme .project {
+    border-color: var(--color-border-light-dark);
+    background-color: var(--color-project-background-accent-dark);
+    box-shadow: var(--box-shadow-profile-project-dark);
+}
+.dark-theme footer {
+    color: var(--color-footer-text-dark);
+    border-top-color: var(--color-border-light-dark);
+}
+
+.dark-theme .profile-image:hover { 
+    filter: sepia(20%); 
+}
+
+.dark-theme .project-image:hover {
+    filter: sepia(60%);
+}
+
+
+
+/* ---------------------------------------------------------------------------*/
 /* --- Media Query for smaller screens (e.g., phones - below 768px width) --- */
+/* ---------------------------------------------------------------------------*/
 
 @media (max-width: 768px) { /* Apply styles only when screen width is 768px or less */
     body {
@@ -272,14 +381,25 @@ footer {
     }
 
     .contact-icon {
-        width: 60px;   /* Reduce for small screens */
+        width: 60px;            /* Reduce for small screens */
         height: auto;
     }
 
     .contact-icon-link {
-        position: static;    /* Change positioning from absolute to static. This makes the contact icon flow in the document order, below the header content */
-        margin-top: 15px;    /* Add top margin to the contact icon to create space between it and the header text */
-        text-align: center;   /* Center align the contact icon link */
+        position: static;       /* Change positioning from absolute to static. This makes the contact icon flow in the document order, below the header content */
+        margin-top: 15px;       /* Add top margin to the contact icon to create space between it and the header text */
+        text-align: center;     /* Center align the contact icon link */
+    }
+
+    #language-selector {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .lang-flag {
+        width: 32px;        /* Reduce flags size */
+        height: auto;
     }
 
     .project {
@@ -289,7 +409,7 @@ footer {
 
     .project-image {
         margin-left: 0;      /* Remove the left margin from project images as they are now stacked below the text, not beside it */
-        margin-top: 15px;     /* Add top margin to the project image to separate it from the text above */
+        margin-top: 15px;    /* Add top margin to the project image to separate it from the text above */
         width: 100%;         /* Make project images take up 100% of the width of their container */
         max-width: 400px;    /* Optionally set a maximum width for project images to prevent them from becoming too large on very wide phone screens */
         height: auto;        /* Set height to auto so the image scales proportionally to the width, maintaining aspect ratio */
