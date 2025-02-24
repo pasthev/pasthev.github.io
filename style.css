@@ -1,6 +1,7 @@
 :root {
     /* --- Color Variables --- */
     --color-text-main: #333;                    /* Main text color for the body of the website */
+    --color-titles: #5a2000;                    /* Main text color for the titles of the website */
     --color-link-primary: #6f2309;              /* Primary color for links, a brownish hue */
     --color-border-light: #eee;                 /* Light gray color for borders to create subtle separations */
     --color-shadow-light: #888888;              /* Light gray color for general shadows, providing depth */
@@ -35,8 +36,8 @@
 body {
     /*  Main styles for the body of the webpage */
     font-family: sans-serif;    /* Modern font family */
-    margin: 5em var(--spacing-margin-body-horizontal) 2em;        /* Margin around content */
-    line-height: 1.6;           /* Line spacing for better readability */
+    margin: 5em var(--spacing-margin-body-horizontal) 2em;  /* Margin around content */
+    line-height: 1.6;                                       /* Line spacing for better readability */
     color: var(--color-text-main);              
 }
 
@@ -51,7 +52,7 @@ header {
 .profile-image {
     /*  Styles for the profile image in the header */
     width: 200px;               /* Width of the profile image */
-    height: 200px;              /* Height of the profile image */
+    height: auto;
     border-radius: var(--border-radius-base); 
     margin-right: var(--spacing-margin-image-right);
     box-shadow: var(--box-shadow-profile-project); 
@@ -67,12 +68,15 @@ header {
 
 h1 {
     /*  Styles for the main title (<h1>) of the page */
+    color: var(--color-titles);              
     font-size: 2.5em;           /* Main title font size */
     margin: 0;                  /* Remove default title margins */
+    align-self: flex-end;
 }
 
 h2 {
     /*  Styles for section titles (<h2>) */
+    color: var(--color-titles);              
     font-size: 2em;                     /* Section title font size */
     border-bottom: 2px solid #ccc;    /* Separating line under section titles */
     padding-bottom: var(--spacing-padding-section-bottom);
@@ -87,21 +91,40 @@ h3 {
 
 code {
     /*  Styles for inline code snippets */
-    background-color: var(--color-code-background);    /* Light gray background for code */
-    padding: 2px 5px;               /* Inner spacing for code */
-    border-radius: var(--border-radius-base);             /* Rounded corners for code */
-    font-family: monospace;         /* Monospace font for code */
+    background-color: var(--color-code-background);     /* Light gray background for code */
+    padding: 2px 5px;                                   /* Inner spacing for code */
+    border-radius: var(--border-radius-base);           /* Rounded corners for code */
+    font-family: monospace;                             /* Monospace font for code */
 }
 
 a {
     /*  Default styles for links (<a>) */
-    color: var(--color-link-primary);               /* Brown color for links (classic link color) */
-    text-decoration: none;          /* Remove default link underline */
+    color: var(--color-link-primary);   /* Brown color for links (classic link color) */
+    text-decoration: none;              /* Remove default link underline */
 }
 
 a:hover {
     /*  Mouse-over effect for links */
     text-decoration: underline;     /* Underline links on mouse hover */
+}
+
+/* Styles for language selector */
+#language-selector {
+    position: absolute; /* Flags at the absolute top right of the screen */
+    top: 0px;
+    right: 0px;
+}
+
+.lang-flag {
+    width: 48px;
+    height: auto;
+    cursor: pointer; /* "Hand" cursor */
+    opacity: 0.6; /* Slightly transparent */
+    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition for mouse-over */
+}
+
+.lang-flag:hover, .lang-flag.active {
+    opacity: 1.0;       /* Full opacity on mouse-over */
 }
 
 #bio {
@@ -111,8 +134,8 @@ a:hover {
 
 #bio ul {
     /*  Styles for unordered lists within the 'bio' section */
-    list-style: none;               /* Remove default list bullets */
-    padding-left: var(--spacing-indentation);             /* Remove default list indentation */
+    list-style: none;                           /* Remove default list bullets */
+    padding-left: var(--spacing-indentation);   /* Remove default list indentation */
 }
 
 #bio li {
@@ -141,7 +164,7 @@ a:hover {
 .project-image {
     /*  Styles for images within project blocks */
     width: 320px;                   /* Fixed pic width */
-    height: 240px;                  /* and heigth */
+    height: auto;
     border-radius: var(--border-radius-base);            /* Rounded corners */
     border-style: groove;
     margin-left: var(--spacing-margin-project-image-left);              /* Left margin to separate pic from text */
@@ -158,14 +181,14 @@ a:hover {
 
 .project-text {
     /*  Styles for the text content within project blocks */
-    padding-right: var(--spacing-padding-project-text-right);            /* Added right margin to separate from pic */
-    max-width: 70%;                 /* Limit for text bloc */
+    padding-right: var(--spacing-padding-project-text-right);   /* Added right margin to separate from pic */
+    max-width: 70%;                                             /* Limit for text bloc */
 }
 
 .contact-icon {
     /*  Styles for the contact icon image */
     width: 120px;                                           /* Width of the icon (was: 150) */
-    height: 98px;                                           /* Height of the icon (was:123) */
+    height: auto;
     transition: transform 0.2s ease-in-out;                 /* Smooth transition for hover effect */
     filter: sepia(60%) drop-shadow(var(--box-shadow-contact-icon));  /* Light shadow, optional - for a visual effect */
 }
@@ -173,7 +196,7 @@ a:hover {
 .contact-icon-link {
     /*  Positioning styles for the contact icon link */
     position: absolute;             /* Absolute positioning relative to the nearest positioned ancestor (here, <header>) */
-    top: 0px;                       /* Positioned 0 pixels from the top of the header */
+    top: 100px;                     /* To leave room for the flags */
     right: 0px;                     /* Positioned 0 pixels from the right of the header */
 }
 
@@ -243,13 +266,14 @@ footer {
     }
 
     h1 {
-        font-size: 1.8em;      /* Reduce the font size of the main title for smaller screens */
+        font-size: 1.8em;       /* Reduce the font size of the main title for smaller screens */
+        text-align: center;
+        align-self: auto;       /* Counters the initial align-self */
     }
 
     .contact-icon {
-        width: 60px;   /* Nouvelle largeur pour petit écran */
-        height: 49px;  /* Nouvelle hauteur pour petit écran */
-        /* ... les autres styles .contact-icon dans le media query ... */
+        width: 60px;   /* Reduce for small screens */
+        height: auto;
     }
 
     .contact-icon-link {
@@ -281,10 +305,10 @@ footer {
     }
 
     .github-icon-link, .linkedin-icon-link {
-        position: static;    /* Change positioning of footer icons from absolute to static, allowing them to flow */
-        display: inline-block; /* Display footer icons as inline-block elements so they can be side-by-side but still have margin */
-        margin: 10px;        /* Add margin around the footer icons for spacing */
-        text-align: center;   /* Center align the footer icon links */
+        position: static;       /* Change positioning of footer icons from absolute to static, allowing them to flow */
+        display: inline-block;  /* Display footer icons as inline-block elements so they can be side-by-side but still have margin */
+        margin: 10px;           /* Add margin around the footer icons for spacing */
+        text-align: center;     /* Center align the footer icon links */
     }
 
     .github-icon, .linkedin-icon {

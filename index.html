@@ -3,81 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pascal Theveny - GitHub</title>
+    <title data-i18n="pageTitle">Pascal Theveny - GitHub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <img src="pasthev.jpg" alt="Pasthev" class="profile-image">
-        <h1>Pascal Theveny</h1>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSckf2f04hYhTN3T6GvchbxhjhKcYHLMRDXnrRfqlM_eRW_NiA/viewform?usp=sf_link" target="_blank" class="contact-icon-link" title="Anonymous form to contact me">
+        <div id="language-selector">
+            <a href="#" class="lang-option" data-lang="en">
+                <img src="en.png" alt="English" class="lang-flag">
+            </a>
+            <a href="#" class="lang-option" data-lang="fr">
+                <img src="fr.png" alt="Français" class="lang-flag">
+            </a>
+        </div>
+        <img src="pasthev.jpg" alt="Pascal Theveny" class="profile-image">
+        <h1 data-i18n="headerTitle">Pascal Theveny</h1>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSckf2f04hYhTN3T6GvchbxhjhKcYHLMRDXnrRfqlM_eRW_NiA/viewform?usp=sf_link" target="_blank" class="contact-icon-link" title="Anonymous form to contact me" data-i18n="contactMeTitle">
             <img src="contact.png" alt="Contact Me" class="contact-icon">
-        </a>    </header>
+        </a>
+    </header>
 
-    <h2>About Me</h2>
+    <h2 data-i18n="aboutMeSectionTitle">About Me</h2>
     <section id="bio">
-        <p>I'm French, living near Paris. I used to be a machine code dev, back in the days - learned everything with a Zilog Z80A, later coded a lot in Motorola 68000 assembly...</p>
-        <p>I was used to moving bytes for doing things, which explains the hard time I'm sometimes having with high level languages, but at least, in <code>myVar.push(data[i].colours)</code>, I can understand <code>push</code>, and I'll like it for as long as I can still <code>pop</code>.</p>
+        <p data-i18n="bioParagraph1">I'm French, living near Paris. I used to be a machine code dev, back in the days - learned everything with a Zilog Z80A, later coded a lot in Motorola 68000 assembly...</p>
+        <p data-i18n="bioParagraph2">I was used to moving bytes for doing things, which explains the hard time I'm sometimes having with high level languages, but at least, in <code>myVar.push(data[i].colours)</code>, I can understand <code>push</code>, and I'll like it for as long as I can still <code>pop</code>.</p>
 
-        <h3>Work Experience</h3>
+        <h3 data-i18n="workExperienceTitle">Work Experience</h3>
         <ul>
-            <li><strong>Google:</strong> 17 years as Systems Engineer</li>
-            <li><strong>OpenText:</strong> 3 years as Europe & Asia IT Director</li>
-            <li><strong>Netscape, AOL, Sun Microsystems:</strong> 5 years as IT Manager</li>
+            <li data-i18n="workExperienceGoogle">Google: 17 years as Systems Engineer</li>
+            <li data-i18n="workExperienceOpentext">OpenText: 3 years as Europe & Asia IT Director</li>
+            <li data-i18n="workExperienceNetscape">Netscape, AOL, Sun Microsystems: 5 years as IT Manager</li>
         </ul>
     </section>
 
-    <h2>My Projects on GitHub</h2>
+    <h2 data-i18n="myProjectsSectionTitle">My Projects on GitHub</h2>
     <section id="projects">
-        <p>While computer science is often a goal for me, I have always lamented that it becomes one for people who only seek to satisfy other passions for which it should only have been a means. Computers too often waste time; I am happy every time I allow others to save a little.</p>
-        <p>Below are some of my projects - Check out my <a href="https://github.com/pasthev" target="_blank">GitHub page</a> for more:</p>
+        <p data-i18n="projectsParagraph1">While computer science is often a goal for me, I have always lamented that it becomes one for people who only seek to satisfy other passions for which it should only have been a means. Computers too often waste time; I am happy every time I allow others to save a little.</p>
+        <p data-i18n="projectsParagraph2">Below are some of my projects - Check out my https://github.com/pasthev GitHub page for more:</p>
 
         <div class="project">
             <div class="project-text">
-                <h3><a href="https://aiprof-pasthev.streamlit.app/">AIProf</a></h3>
-                <p>An A.I. tool to help teachers prepare courses, workshops, and exercises, powered by Gemini.</p>
-                <p><strong>Online Tool:</strong> <a href="https://aiprof-pasthev.streamlit.app/">https://aiprof-pasthev.streamlit.app/</a></p>
-                <p><strong>Source Code:</strong> <a href="https://github.com/pasthev/AIProf">https://github.com/pasthev/AIProf</a></p>
+                <h3 data-i18n="aiProfProjectTitle">AIProf</a></h3>
+                <p data-i18n="aiProfProjectDescription">An A.I. tool to help teachers prepare courses, workshops, and exercises, powered by Gemini.</p>
+                <p data-i18n="aiProfOnlineTool">Online Tool: https://aiprof-pasthev.streamlit.app/</p>
+                <p data-i18n="aiProfSourceCode">Source Code: https://github.com/pasthev/AIProf</p>
             </div>
-            <a href="https://aiprof-pasthev.streamlit.app/" target="_blank" title="Opens AIProf online tool in a new tab">
-                <img src="aiprof01s.jpg" alt="Picture of AIProf" application class="project-image">
+            <a href="https://aiprof-pasthev.streamlit.app/" target="_blank" title="Opens AIProf online tool in a new tab" data-i18n="aiProfProjectImageLinkTitle">
+                <img src="aiprof01s.jpg" data-i18n="aiProfImageAlt"  alt="Picture of AIProf" application class="project-image">
             </a>
         </div>
     
         <div class="project">
             <div class="project-text">
-                <h3><a href="https://pasthev.github.io/sensus/">Sensus</a></h3>
-                <p>An IR and RF remote control code conversion tool for geeks. Play with Pronto, LIRC, raw, Broadlink Base 64 or hex codes and more.</p>
-                <p><strong>Online Tool:</strong> <a href="https://pasthev.github.io/sensus/">https://pasthev.github.io/sensus/</a></p>
-                <p><strong>Source Code:</strong> <a href="https://github.com/pasthev/sensus">https://github.com/pasthev/sensus</a></p>
+                <h3 data-i18n="sensusProjectTitle">Sensus</a></h3>
+                <p data-i18n="sensusProjectDescription">An IR and RF remote control code conversion tool for geeks. Play with Pronto, LIRC, raw, Broadlink Base 64 or hex codes and more.</p>
+                <p data-i18n="sensusOnlineTool">Online Tool: https://pasthev.github.io/sensus/</p>
+                <p data-i18n="sensusSourceCode">Source Code: https://github.com/pasthev/sensus</p>
             </div>
-            <a href="https://aiprof-pasthev.streamlit.app/" target="_blank" title="Opens Sensus online tool in a new tab">
-                <img src="sensus01s.jpg" alt="Picture of Sensus IR & RF code converter application" class="project-image">
+            <a href="https://pasthev.github.io/sensus/" target="_blank" title="Opens Sensus online tool in a new tab" data-i18n="sensusProjectImageLinkTitle">
+                <img src="sensus01s.jpg"  data-i18n="sensusImageAlt" alt="Picture of Sensus IR & RF code converter application" class="project-image">
             </a>
         </div>
     
         <div class="project">
             <div class="project-text">
-                <h3><a href="https://workspace.google.com/u/0/marketplace/app/show/82177279234">Show!</a></h3>
-                <p>An extension to display non-printable characters within a Google Docs document, used by more than 2 million users until Google implemented the function natively.</p>
-                <p><strong>Online Tool:</strong> <a href="https://workspace.google.com/u/0/marketplace/app/show/82177279234">Google Workspace Marketplace</a></p>
-                <p><strong>Online Documentation:</strong> <a href="https://sites.google.com/site/show4docs/foreword">https://sites.google.com/site/show4docs/foreword</a></p>
-                <p><strong>Source Code:</strong> <a href="https://github.com/pasthev/show">https://github.com/pasthev/show</a></p>
-                <p><strong>V4 preview:</strong> <a href="https://www.youtube.com/watch?v=WfzlNLxzEDU">https://youtu.be/WfzlNLxzEDU</a> - well started, never finished.</p>
+                <h3 data-i18n="showProjectTitle">Show!</a></h3>
+                <p data-i18n="showProjectDescription">An extension to display non-printable characters within a Google Docs document, used by more than 2 million users until Google implemented the function natively.</p>
+                <p data-i18n="showOnlineTool">Online Tool: https://workspace.google.com/u/0/marketplace/app/show/82177279234 in Google Marketplace</p>
+                <p data-i18n="showOnlineDocumentation">Online Documentation: https://sites.google.com/site/show4docs/foreword in Google Sites</p>
+                <p data-i18n="showSourceCode">Source Code: https://github.com/pasthev/show</p>
+                <p data-i18n="showV4Preview">V4 preview: https://www.youtube.com/watch?v=WfzlNLxzEDU - well started, never finished.</p>
             </div>
-            <a href="https://workspace.google.com/u/0/marketplace/app/show/82177279234" target="_blank" title="Opens Show! page in Marketplace in a new tab">
-                <img src="show01s.jpg" alt="Picture of Show! extension for Google Docs" class="project-image">
+            <a href="https://workspace.google.com/u/0/marketplace/app/show/82177279234" target="_blank" title="Opens Show! page in Marketplace in a new tab" data-i18n="showProjectImageLinkTitle">
+                <img src="show01s.jpg"  data-i18n="showImageAlt" alt="Picture of Show! extension for Google Docs" class="project-image">
             </a>
         </div>
     </section>
 
     <footer>
-        <a href="https://github.com/pasthev" target="_blank" class="github-icon-link" title="My GitHub Profile">
-            <img src="github.png" alt="GitHub Profile" class="github-icon">
+        <a href="https://github.com/pasthev" target="_blank" class="github-icon-link" title="My GitHub Profile" data-i18n="githubProfileTitle">
+            <img src="github.png" alt="GitHub Profile" data-i18n="githubProfileAlt" class="github-icon">
         </a>
-        <p>Pascal</p>
-        <a href="https://linkedin.com/in/pthev/" target="_blank" class="linkedin-icon-link" title="My LinkedIn Profile">
-            <img src="linkedin.png" alt="LinkedIn Profile" class="linkedin-icon">
+        <p data-i18n="footerPascal">Pascal</p>
+        <a href="https://linkedin.com/in/pthev/" target="_blank" class="linkedin-icon-link" title="My LinkedIn Profile"data-i18n="linkedinProfileTitle">
+            <img src="linkedin.png" alt="LinkedIn Profile" data-i18n="linkedinProfileAlt" class="linkedin-icon">
         </a>    </footer>
+        <script src="script.js"></script>
 </body>
 </html>
